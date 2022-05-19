@@ -1,0 +1,35 @@
+// ignore_for_file: avoid_unnecessary_containers
+
+import 'package:flutter/material.dart';
+import 'package:wordle_clone/widgets/wordle_key.dart';
+
+class WorldleKeyboard extends StatelessWidget {
+  const WorldleKeyboard({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var i in "qwertyuiop".split("")) WordleKey(i),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+           for (var i in "asdfghjkl".split("")) WordleKey(i),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var i in "_zxcvbnm<".split("")) WordleKey(i),
+          ],
+        ),
+      ],
+    );
+  }
+}
